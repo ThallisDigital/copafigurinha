@@ -481,21 +481,21 @@ export default function Home() {
               <div className="grid grid-cols-3 gap-3 mb-5">
                 <div>
                   <label className="text-xs font-bold text-[#0a2a6c] uppercase">Dia</label>
-                  <select value={day} onChange={e=>setDay(e.target.value)} className="w-full border-2 border-gray-300 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]">
+                  <select value={day} onChange={e=>setDay(e.target.value)} className="w-full border-2 border-gray-300 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]/30">
                     <option value="">--</option>
                     {Array.from({length:31},(_,i)=>i+1).map(d=><option key={d}>{d}</option>)}
                   </select>
                 </div>
                 <div>
                   <label className="text-xs font-bold text-[#0a2a6c] uppercase">Mês</label>
-                  <select value={month} onChange={e=>setMonth(e.target.value)} className="w-full border-2 border-gray-300 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]">
+                  <select value={month} onChange={e=>setMonth(e.target.value)} className="w-full border-2 border-gray-300 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]/30">
                     <option value="">--</option>
                     {MONTHS.map(m=><option key={m}>{m}</option>)}
                   </select>
                 </div>
                 <div>
                   <label className="text-xs font-bold text-[#0a2a6c] uppercase">Ano</label>
-                  <select value={year} onChange={e=>setYear(e.target.value)} className="w-full border-2 border-gray-300 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]">
+                  <select value={year} onChange={e=>setYear(e.target.value)} className="w-full border-2 border-gray-300 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]/30">
                     <option value="">--</option>
                     {Array.from({length:71},(_,i)=>2024-i).map(y=><option key={y}>{y}</option>)}
                   </select>
@@ -506,10 +506,10 @@ export default function Home() {
               </div>
               <label className="text-xs font-bold text-[#0a2a6c] uppercase">Seu melhor e-mail</label>
               <input value={email} onChange={e=>setEmail(e.target.value)} type="email" placeholder="email@exemplo.com"
-                className="w-full border-2 border-[#0a2a6c] rounded-lg px-4 py-3 mt-1 mb-4 focus:outline-none focus:ring-2 focus:ring-[#0a2a6c]"/>
+                className="w-full border-2 border-[#0a2a6c] rounded-lg px-4 py-3 mt-1 mb-4 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]"/>
               <label className="text-xs font-bold text-[#0a2a6c] uppercase">WhatsApp (com DDD)</label>
               <input value={whatsapp} onChange={e=>setWhatsapp(e.target.value.replace(/\D/g,''))} type="tel" placeholder="(11) 91234-5678" maxLength={11}
-                className="w-full border-2 border-[#0a2a6c] rounded-lg px-4 py-3 mt-1 mb-5 focus:outline-none focus:ring-2 focus:ring-[#0a2a6c]"/>
+                className="w-full border-2 border-[#0a2a6c] rounded-lg px-4 py-3 mt-1 mb-5 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]"/>
               <div className="flex gap-3">
                 <OutlineBtn onClick={()=>setStep('q1')}>Voltar</OutlineBtn>
                 <div className="flex-1">
@@ -535,17 +535,17 @@ export default function Home() {
                 <div>
                   <label className="text-xs font-bold text-[#0a2a6c] uppercase">Altura (cm)</label>
                   <input value={height} onChange={e=>setHeight(e.target.value.replace(/\D/g,''))} maxLength={3}
-                    className="w-full border-2 border-[#0a2a6c] rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#0a2a6c]"/>
+                    className="w-full border-2 border-[#0a2a6c] rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]"/>
                 </div>
                 <div>
                   <label className="text-xs font-bold text-[#0a2a6c] uppercase">Peso (kg)</label>
                   <input value={weight} onChange={e=>setWeight(e.target.value.replace(/\D/g,''))} maxLength={3}
-                    className="w-full border-2 border-[#0a2a6c] rounded-lg px-3 py-2 mt-1 focus:outline-none focus:ring-2 focus:ring-[#0a2a6c]"/>
+                    className="w-full border-2 border-[#0a2a6c] rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]"/>
                 </div>
               </div>
               <label className="text-xs font-bold text-[#0a2a6c] uppercase">Clube do coração</label>
               <input list="clubes-br" value={club} onChange={e=>setClub(e.target.value)} placeholder="Comece a digitar ou escolha"
-                className="w-full border-2 border-[#0a2a6c] rounded-lg px-4 py-3 mt-1 mb-5 focus:outline-none focus:ring-2 focus:ring-[#0a2a6c]"/>
+                className="w-full border-2 border-[#0a2a6c] rounded-lg px-4 py-3 mt-1 mb-5 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]"/>
               <datalist id="clubes-br">{BRAZIL_CLUBS.map(c=><option key={c} value={c}/>)}</datalist>
               <div className="flex gap-3">
                 <OutlineBtn onClick={()=>setStep('q2')}>Voltar</OutlineBtn>
