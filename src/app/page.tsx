@@ -423,7 +423,7 @@ export default function Home() {
                 <p className="text-sm text-gray-600 mt-1">O nome que vai aparecer na figurinha</p>
               </div>
               <input value={name} onChange={e=>setName(e.target.value)} placeholder="Nome e sobrenome"
-                className="w-full border border-gray-300 rounded-xl px-4 py-4 mb-5 focus:outline-none focus:border-[#0a2a6c]"/>
+                className="w-full border-2 border-gray-300 rounded-xl px-4 py-4 mb-5 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]"/>
               <div className="text-xs font-bold text-[#0a2a6c] uppercase mb-2">Foto do craque</div>
               <div className="grid grid-cols-2 gap-3 mb-6">
                 {['🖼️','📷'].map((icon,i)=>(
@@ -481,23 +481,23 @@ export default function Home() {
               <div className="grid grid-cols-3 gap-3 mb-5">
                 <div>
                   <label className="text-xs font-bold text-[#0a2a6c] uppercase">Dia</label>
-                  <select value={day} onChange={e=>setDay(e.target.value)} className="w-full border rounded-lg px-3 py-2 mt-1">
+                  <select value={day} onChange={e=>setDay(e.target.value)} className="w-full border-2 border-gray-300 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]">
                     <option value="">--</option>
                     {Array.from({length:31},(_,i)=>i+1).map(d=><option key={d}>{d}</option>)}
                   </select>
                 </div>
                 <div>
                   <label className="text-xs font-bold text-[#0a2a6c] uppercase">Mês</label>
-                  <select value={month} onChange={e=>setMonth(e.target.value)} className="w-full border rounded-lg px-3 py-2 mt-1">
+                  <select value={month} onChange={e=>setMonth(e.target.value)} className="w-full border-2 border-gray-300 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]">
                     <option value="">--</option>
                     {MONTHS.map(m=><option key={m}>{m}</option>)}
                   </select>
                 </div>
                 <div>
                   <label className="text-xs font-bold text-[#0a2a6c] uppercase">Ano</label>
-                  <select value={year} onChange={e=>setYear(e.target.value)} className="w-full border rounded-lg px-3 py-2 mt-1">
+                  <select value={year} onChange={e=>setYear(e.target.value)} className="w-full border-2 border-gray-300 rounded-lg px-3 py-2 mt-1 focus:outline-none focus:border-[#0a2a6c] focus:ring-2 focus:ring-[#0a2a6c]">
                     <option value="">--</option>
-                    {Array.from({length:71},(_,i)=>2020-i).map(y=><option key={y}>{y}</option>)}
+                    {Array.from({length:71},(_,i)=>2024-i).map(y=><option key={y}>{y}</option>)}
                   </select>
                 </div>
               </div>
