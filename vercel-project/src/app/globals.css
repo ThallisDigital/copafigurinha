@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand-blue: #0a2a6c;
+  --brand-yellow: #FFD60A;
+  --brand-green: #006847;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+@keyframes sway-left {
+  0%, 100% { transform: translateX(-8rem) rotate(-4deg); }
+  50% { transform: translateX(-8.5rem) rotate(-3deg); }
+}
+@keyframes sway-center {
+  0%, 100% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(0) scale(1.02); }
+}
+@keyframes sway-right {
+  0%, 100% { transform: translateX(8rem) rotate(4deg); }
+  50% { transform: translateX(8.5rem) rotate(3deg); }
+}
+
+.sway-left { animation: sway-left 3.5s ease-in-out infinite; }
+.sway-center { animation: sway-center 3s ease-in-out infinite; }
+.sway-right { animation: sway-right 3.5s ease-in-out infinite; }
