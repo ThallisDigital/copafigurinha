@@ -21,24 +21,22 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ imageDataUrl: photoDataUrl, usedFallback: true });
     }
 
-    const prompt = `Transform this person into a professional FIFA World Cup football portrait sticker photo.
+    const prompt = `EDIT THIS PHOTO: Replace ONLY the person's clothing with the official Brazil National Team soccer jersey.
 
-CRITICAL - PRESERVE IDENTITY EXACTLY:
-- Same face, eyes, nose, mouth, jawline
-- Same skin tone
-- Same hair color, texture, style
-- Same age and gender
-- Person must be instantly recognizable
+MANDATORY CHANGES TO CLOTHING:
+- Remove whatever shirt/top the person is wearing
+- Replace it with the official Brazil CBF yellow jersey (canary yellow color)
+- The jersey must have: green collar trim, CBF badge on left chest, Nike swoosh on right chest
+- Keep the same body pose and position
 
-UNIFORM:
-- Official Brazil national team jersey (canary yellow, green collar and sleeves)
-- CBF badge on chest, number 10, BRASIL text, Nike swoosh
+ABSOLUTELY DO NOT CHANGE:
+- The person's face - keep 100% identical
+- Hair color, style, length - exactly the same
+- Skin tone - no changes
+- Facial expression - keep the same
+- Background can be cleaned to solid light blue or gradient blue
 
-POSE: front-facing, upper body, warm smile, studio lighting
-
-STYLE: photorealistic, professional sports portrait, NOT cartoon or illustrated
-
-BACKGROUND: pure white, clean isolated portrait, no shadows`;
+OUTPUT: A clean portrait photo showing the SAME EXACT PERSON now wearing the Brazil yellow jersey, suitable for a Panini FIFA World Cup sticker. Photorealistic quality, not cartoon.`;
 
     // Convert dataUrl to base64 only
     const base64 = photoDataUrl.split(',')[1];
@@ -57,10 +55,12 @@ BACKGROUND: pure white, clean isolated portrait, no shadows`;
         const byteArr = new Uint8Array(byteChars.length);
         for (let i = 0; i < byteChars.length; i++) byteArr[i] = byteChars.charCodeAt(i);
         const blob = new Blob([byteArr], { type: mimeType });
-        form.append('image', blob, 'photo.jpg');
+        form.append('image', blob, 'photo.png');
         form.append('prompt', prompt);
         form.append('model', 'gpt-image-1');
         form.append('size', '1024x1024');
+        form.append('quality', 'high');
+        form.append('response_format', 'b64_json');
         form.append('n', '1');
         return form;
       })(),
